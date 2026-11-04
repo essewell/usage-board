@@ -8,6 +8,10 @@ launch.bat               # Windows: starts it and opens an 800x480 window on the
 node usage-board.mjs --check   # tiny self-test
 ```
 
+Look: dark glass cards over a soft gradient, scaled to the window (`vmin`) so it fits any screen without scrolling. Retint with `http://localhost:7777/?accent=ff7ab8`. Numerals use Bahnschrift (ships with Windows; other systems fall back to a system sans).
+
+If a refresh fails, the card keeps its last good numbers, dims them and shows `stale`. Claude is polled every 5 minutes (failures retry after 2) because its usage endpoint rate-limits.
+
 | Card | Source |
 |---|---|
 | Claude | `~/.claude/.credentials.json` -> Anthropic's undocumented OAuth usage endpoint (5h and weekly) |
